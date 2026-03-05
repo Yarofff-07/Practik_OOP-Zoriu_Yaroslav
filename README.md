@@ -23,7 +23,7 @@
 
 ## Структура проекту
 
-![Структура проекту](https://github.com/Yarofff-07/Praktik_OOP-Zoriu_Yaroslav/blob/task-2/pro2/img/str.png?raw=true)
+![Структура проекту](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-2-(03.03.26)/pro2/img/str.png)
 
 ---
 
@@ -310,4 +310,17 @@ public class MainTest {
     }
 }
 ```
+---
+# Скріншоти виконання
+
+## Робота програми
+
+![Program](PR2/img/priklad1.png)
+
+---
+
+## Результат обчислень
+
+![Result](PR2/img/priklad2.png)
+
 ---
