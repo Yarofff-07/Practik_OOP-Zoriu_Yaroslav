@@ -25,7 +25,6 @@
 
 ```java
 public class Prac1 {
-
     public static void main(String[] args) {
 
         System.out.println("=== Вивід аргументів командного рядка ===");
@@ -38,9 +37,10 @@ public class Prac1 {
         }
 
         System.out.println("Кількість аргументів: " + args.length);
+        System.out.println("Список аргументів:");
 
         for (int i = 0; i < args.length; i++) {
-            System.out.println("Аргумент " + (i + 1) + ": " + args[i]);
+            System.out.println((i + 1) + ") " + args[i]);
         }
     }
 }
