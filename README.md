@@ -315,12 +315,12 @@ public class MainTest {
 
 ## Робота програми
 
-![Program](PR2/img/priklad1.png)
+![Program](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-2-(03.03.26)/pro2/img/rob2.png)
 
 ---
 
 ## Результат обчислень
 
-![Result](PR2/img/priklad2.png)
+![Result](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-2-(03.03.26)/pro2/img/rob2.png)
 
 ---
