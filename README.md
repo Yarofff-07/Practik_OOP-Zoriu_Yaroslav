@@ -315,11 +315,9 @@ public class MainTest {
 
 ## Робота програми
 
-![Program](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-2-(03.03.26)/pro2/img/rob2.png)
+![Program](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-2-(03.03.26)/pro2/img/rob1.png)
 
 ---
-
-## Результат обчислень
 
 ![Result](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-2-(03.03.26)/pro2/img/rob2.png)
 
