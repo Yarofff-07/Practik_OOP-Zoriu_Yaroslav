@@ -1,35 +1,20 @@
-# Compiled Java files
+# compiled files
 *.class
 
-# Build folders
-out/
-build/
-target/
-bin/
-
-# Serialized files
+# serialization
 *.bin
 
-# Log files
+# logs
 *.log
 
-# Package files
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# build folders
+bin/
+build/
+out/
 
-# IDE folders
+# vscode settings
 .vscode/
-.idea/
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# JVM crash logs
-hs_err_pid*
-replay_pid*
