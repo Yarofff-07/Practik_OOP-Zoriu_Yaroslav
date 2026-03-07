@@ -143,3 +143,331 @@ public class Main {
 }
 ```
 </details>
+
+## View.java
+`src/ex02/View.java` — інтерфейс, який визначає набір методів для
+відображення результатів обчислень. Використовується як базовий тип
+для всіх класів, що реалізують логіку виведення даних.
+<details>
+<summary>Код</summary>
+
+```java
+package ex02;
+
+import java.io.IOException;
+
+/**
+ * Інтерфейс для відображення результатів.
+ */
+public interface View {
+    void viewHeader();
+    void viewBody();
+    void viewFooter();
+    void viewShow();
+    void viewInit();
+    void viewSave() throws IOException;
+    void viewRestore() throws Exception;
+}
+```
+</details>
+
+## Viewable.java
+`src/ex02/Viewable.java` — інтерфейс фабрики, що оголошує метод
+створення об'єктів відображення. Є частиною реалізації шаблону
+проектування Factory Method.
+<details>
+<summary>Код</summary>
+
+```java
+package ex02;
+
+/**
+ * Інтерфейс фабрики для створення об'єкта View.
+ */
+public interface Viewable {
+    View getView();
+}
+```
+</details>
+
+## ViewableResult.java
+`src/ex02/ViewableResult.java` — клас, що реалізує інтерфейс фабрики
+та відповідає за створення об'єктів типу `ViewResult`.
+<details>
+<summary>Код</summary>
+
+```java
+package ex02;
+
+/**
+ * Фабрика для створення ViewResult.
+ */
+public class ViewableResult implements Viewable {
+
+    @Override
+    public View getView() {
+        return new ViewResult();
+    }
+}
+```
+</details>
+
+## ViewResult.java
+`src/ex02/ViewResult.java` — клас, що реалізує інтерфейс `View`.
+Містить логіку обчислення, збереження, відновлення та відображення
+результатів роботи програми.
+<details>
+<summary>Код</summary>
+
+```java
+package ex02;
+
+import ex01.Item2d;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+/**
+ * Клас для обчислення, збереження та відображення результатів.
+ */
+public class ViewResult implements View {
+
+    private static final String FNAME = "items.bin";
+    private static final int DEFAULT_NUM = 10;
+
+    private ArrayList<Item2d> items = new ArrayList<Item2d>();
+
+    public ViewResult() {
+        this(DEFAULT_NUM);
+    }
+
+    public ViewResult(int n) {
+        for (int i = 0; i < n; i++) {
+            items.add(new Item2d());
+        }
+    }
+
+    public ArrayList<Item2d> getItems() {
+        return items;
+    }
+
+    private double calc(double x) {
+        return Math.sin(x * Math.PI / 180.0);
+    }
+
+    public void init(double stepX) {
+        double x = 0.0;
+
+        for (Item2d item : items) {
+            item.setXY(x, calc(x));
+            x += stepX;
+        }
+    }
+
+    @Override
+    public void viewInit() {
+        init(Math.random() * 360.0);
+    }
+
+    @Override
+    public void viewSave() throws IOException {
+        ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(FNAME));
+        os.writeObject(items);
+        os.close();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public void viewRestore() throws Exception {
+        ObjectInputStream is = new ObjectInputStream(new FileInputStream(FNAME));
+        items = (ArrayList<Item2d>) is.readObject();
+        is.close();
+    }
+
+    @Override
+    public void viewHeader() {
+        System.out.println("Results:");
+    }
+
+    @Override
+    public void viewBody() {
+        for (Item2d item : items) {
+            System.out.printf("(%.0f; %.3f) ", item.getX(), item.getY());
+        }
+        System.out.println();
+    }
+
+    @Override
+    public void viewFooter() {
+        System.out.println("End.");
+    }
+
+    @Override
+    public void viewShow() {
+        viewHeader();
+        viewBody();
+        viewFooter();
+    }
+}
+```
+</details>
+
+## Item2d.java
+`src/ex01/Item2d.java` — клас для зберігання параметрів та результатів
+обчислень. Використовується для формування елементів колекції
+результатів.
+<details>
+<summary>Код</summary>
+
+```java
+package ex01;
+
+import java.io.Serializable;
+
+public class Item2d implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private double x;
+    private double y;
+
+    public Item2d() {
+        x = 0.0;
+        y = 0.0;
+    }
+
+    public Item2d(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void setXY(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + "; " + y + ")";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Item2d)) {
+            return false;
+        }
+
+        Item2d other = (Item2d) obj;
+
+        return Double.compare(x, other.x) == 0 &&
+               Double.compare(y, other.y) == 0;
+    }
+}
+```
+</details>
+
+## MainTest.java
+`test/ex02/MainTest.java` — клас для тестування роботи програми.
+Містить тести для перевірки правильності обчислень та роботи
+механізмів серіалізації і десеріалізації.
+<details>
+<summary>Код</summary>
+
+```java
+package ex02;
+
+import ex01.Item2d;
+import org.junit.Test;
+
+import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+/**
+ * Тести для ViewResult.
+ */
+public class MainTest {
+
+    @Test
+    public void testCalc() {
+        ViewResult view = new ViewResult(5);
+        view.init(90.0);
+
+        Item2d item = new Item2d();
+        int i = 0;
+
+        item.setXY(0.0, 0.0);
+        assertTrue(view.getItems().get(i).equals(item));
+        i++;
+
+        item.setXY(90.0, 1.0);
+        assertTrue(view.getItems().get(i).equals(item));
+        i++;
+
+        item.setXY(180.0, 0.0);
+        assertTrue(view.getItems().get(i).equals(item));
+        i++;
+
+        item.setXY(270.0, -1.0);
+        assertTrue(view.getItems().get(i).equals(item));
+        i++;
+
+        item.setXY(360.0, 0.0);
+        assertTrue(view.getItems().get(i).equals(item));
+    }
+
+    @Test
+    public void testRestore() {
+        ViewResult view1 = new ViewResult(1000);
+        ViewResult view2 = new ViewResult();
+
+        view1.init(Math.random() * 100.0);
+
+        try {
+            view1.viewSave();
+        } catch (IOException e) {
+            fail(e.getMessage());
+        }
+
+        try {
+            view2.viewRestore();
+        } catch (Exception e) {
+            fail(e.getMessage());
+        }
+
+        assertEquals(view1.getItems().size(), view2.getItems().size());
+        assertTrue(view1.getItems().containsAll(view2.getItems()));
+    }
+}
+```
+</details>
+
+---
+
+##Запуск програми
+
+[Робота програми](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-3-(04.03.26)/pro3/img/robota.png)
