@@ -15,6 +15,8 @@
 
 ---
 
+# Навігація
+
 ## Завдання 1 (02.03.26)
 
 [Посилання на проект](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/tree/task-1-(02.03.26))
