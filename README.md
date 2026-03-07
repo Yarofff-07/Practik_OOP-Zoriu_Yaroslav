@@ -468,6 +468,6 @@ public class MainTest {
 
 ---
 
-##Запуск програми
+## Запуск програми
 
 ![Робота програми](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-3-(04.03.26)/pro3/img/robota.png)
