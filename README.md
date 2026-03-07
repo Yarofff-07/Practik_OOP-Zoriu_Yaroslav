@@ -15,7 +15,7 @@
 
 ## Завдання 1 (02.03.26)
 
-[Посилання на проект](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/tree/task-1-(02.03.26))
+[Посилання на завдання](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/tree/task-1-(02.03.26))
 
 > В завданні була реалізована проста консольна програма.
 
@@ -23,7 +23,7 @@
 
 ## Завдання 2 (03.03.26)
 
-[Посилання на проект](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/tree/task-2-(03.03.26))
+[Посилання на завдання](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/tree/task-2-(03.03.26))
 > В завданні було реалізовано:
 > - серіалізація
 > - агрегування
@@ -35,7 +35,9 @@
 
 ## Завдання 3 (04.03.26)
 
-(буде пізніше)
+[Посилання на завдання](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-3-(04.03.26))
+
+> В завданні було реалізовано шаблон проєктування Factory Method для створення об'єктів різних типів.
 
 ---
 
