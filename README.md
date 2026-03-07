@@ -163,7 +163,7 @@ public class Calc {
 ```
 </details>
 
-##Item2d.java
+## Item2d.java
 
 `src/ex01/Item2d.java` — клас для зберігання параметрів та результатів
 обчислення.
@@ -222,7 +222,7 @@ public class Item2d implements Serializable {
 ```
 </details>
 
-##Main.java
+## Main.java
 
 `src/ex01/Main.java` — головний клас програми.
 
@@ -327,7 +327,7 @@ public class Main {
 ```
 </details> 
 
-##MainTest.java
+## MainTest.java
 
 `src/ex01/MainTest.java` — тестовий клас для перевірки
 правильності обчислень та роботи серіалізації.
@@ -402,7 +402,7 @@ public class MainTest {
 ```
 </details>
 
-##Робота програми
+## Робота програми
 
 ![Program](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-2-(03.03.26)/pro2/img/rob1.png)
 
