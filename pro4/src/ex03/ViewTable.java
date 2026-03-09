@@ -1,6 +1,7 @@
 package ex03;
 
 import java.util.Formatter;
+import java.util.Scanner;
 import ex01.Item2d;
 import ex02.ViewResult;
 
@@ -121,10 +122,16 @@ public class ViewTable extends ViewResult {
 
     /**
      * Перевизначення методу init().
+     * Користувач задає ширину таблиці з клавіатури.
      * @param stepX крок зміни x
      */
     @Override
     public void init(double stepX) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter table width: ");
+        width = sc.nextInt();
+
         System.out.print("Initialization... ");
         super.init(stepX);
         System.out.println("done.");
