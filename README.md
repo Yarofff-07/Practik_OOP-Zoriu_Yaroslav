@@ -51,7 +51,15 @@
 
 ## Завдання 5 (06.03.26)
 
-[Посилання на завдання]()
+[Посилання на завдання](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/tree/task-5-(06.03.26))
+
+>
+
+---
+
+## Завдання 6 (09.03.26)
+
+[Посилання на завдання](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/tree/task-6-(09.03.26))
 
 >
 
