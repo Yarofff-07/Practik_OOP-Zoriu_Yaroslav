@@ -727,5 +727,3 @@ public class MainTest {
 ![Робота програми](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-5-(06.03.26)/pro5/img/w4.png)
 
 ![Робота програми](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-5-(06.03.26)/pro5/img/w5.png)
-
-![Робота програми](https://github.com/Yarofff-07/Practik_OOP-Zoriu_Yaroslav/blob/task-5-(06.03.26)/pro5/img/w6.png)
